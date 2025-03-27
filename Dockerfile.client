@@ -1,0 +1,9 @@
+# Cria um contêiner que roda o cliente Python, consulta o 
+# servidor de tempo e ajusta seu relógio gradualmente.
+FROM python:3.9-slim
+RUN pip install requests
+COPY cliente.py /app/cliente.py
+WORKDIR /app
+CMD ["python", "cliente.py"]
+
+

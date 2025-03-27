@@ -1,0 +1,7 @@
+# Cria um contêiner que roda o servidor Flask, obtém
+# a hora via NTP e fornece a API REST para os clientes. 
+FROM python:3.9-slim
+RUN pip install flask ntplib
+COPY server.py /app/server.py
+WORKDIR /app
+CMD ["python", "server.py"]
